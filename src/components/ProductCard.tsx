@@ -1,4 +1,4 @@
-import { Product } from '@/types';
+import { LegacyProduct } from '@/types';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { MapPin, Calendar, IndianRupee, ArrowRight } from 'lucide-react';
@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
 interface ProductCardProps {
-  product: Product;
+  product: LegacyProduct;
 }
 
 const statusColors = {
@@ -31,7 +31,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
   const priceChangePercent = ((priceChange / product.initialPrice) * 100).toFixed(0);
 
   return (
-    <Link to={`/trace/${product.qrCode}`}>
+    <Link to={`/consumer?id=${product.qrCode}`}>
       <Card variant="elevated" className="overflow-hidden group cursor-pointer">
         {/* Image */}
         <div className="relative h-48 overflow-hidden">
