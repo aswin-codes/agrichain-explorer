@@ -1,6 +1,6 @@
-import { Product, ChainLog, ProductWithChain } from '@/types';
+import { LegacyProduct, ChainLog, ProductWithChain } from '@/types';
 
-export const mockProducts: Product[] = [
+export const mockProducts: LegacyProduct[] = [
   {
     id: 'prod-001',
     qrCode: 'AGR-2024-001',
@@ -169,7 +169,7 @@ export const getProductByQR = (qrCode: string): ProductWithChain | null => {
   return getProductWithChain(product.id);
 };
 
-export const searchProducts = (query: string): Product[] => {
+export const searchProducts = (query: string): LegacyProduct[] => {
   const lowerQuery = query.toLowerCase();
   return mockProducts.filter(
     p =>

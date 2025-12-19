@@ -4,10 +4,10 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import FarmerDashboard from "./pages/FarmerDashboard";
-import ScanPage from "./pages/ScanPage";
-import TracePage from "./pages/TracePage";
-import SearchPage from "./pages/SearchPage";
+import FarmerPage from "./pages/FarmerPage";
+import MiddlemanPage from "./pages/MiddlemanPage";
+import RetailerPage from "./pages/RetailerPage";
+import ConsumerPage from "./pages/ConsumerPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,10 +20,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/farmer" element={<FarmerDashboard />} />
-          <Route path="/scan" element={<ScanPage />} />
-          <Route path="/trace/:qrCode" element={<TracePage />} />
-          <Route path="/search" element={<SearchPage />} />
+          <Route path="/farmer" element={<FarmerPage />} />
+          <Route path="/middleman" element={<MiddlemanPage />} />
+          <Route path="/retailer" element={<RetailerPage />} />
+          <Route path="/consumer" element={<ConsumerPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
